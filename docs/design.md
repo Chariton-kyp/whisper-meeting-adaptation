@@ -174,3 +174,20 @@ becomes the baseline benchmark (V and Z) with error analysis.
    - The pilot did not exercise the `dev-select` evaluation path, which runs first, at step 0 of the
      first arm.
    - Log: `results/turbo_lora_both_pilot200/`.
+3. **2026-10-24, harness bug fix. Found while inspecting zero-shot dev errors, before any adapted
+   system was evaluated.**
+   - The bug: Whisper's `EnglishTextNormalizer` leaves a bare "." from a trailing ellipsis
+     ("so..." becomes "so ."). That token is scored as an insertion. On SDM validation it occurs in
+     575 hypotheses and in 0 references.
+   - Why it matters: models adapted on unpunctuated labels stop emitting ellipses. The artifact would
+     therefore bias the comparison in favour of adaptation.
+   - The fix: after normalization, tokens without any letter or digit are dropped. This applies to
+     references and hypotheses of every system.
+   - Already-finished runs (the harness validation) are re-scored from their stored raw hypotheses
+     with `scripts/rescore.py`. They are not re-transcribed.
+   - Not affected: the in-flight L-both run computes its `dev-select` WER with the pre-fix
+     normalizer. That WER is used only to choose among checkpoints of the same run, so it is not
+     part of any reported comparison.
+   - Not changed: spelling-convention mismatches between AMI and Whisper ("okay"/"ok",
+     "cause"/"because", "t v"/"tv") are left alone, because they were not pre-registered. Their
+     effect is analysed separately and labelled as post hoc.

@@ -16,6 +16,12 @@ def test_reference_and_hypothesis_styles_meet():
     )
 
 
+def test_trailing_ellipsis_leaves_no_token():
+    assert normalize("Um...") == ""
+    assert normalize("So...") == "so"
+    assert normalize("It costs 3.50.") == "it costs 3.50"
+
+
 def test_fillers_removed_and_spelling_unified():
     assert normalize("UM so UH the colour") == normalize("so the color")
 

@@ -29,7 +29,9 @@ def whisper_normalizer() -> EnglishTextNormalizer:
 
 
 def normalize(text: str) -> str:
-    return whisper_normalizer()(text).strip()
+    # The Whisper normalizer leaves a bare "." from a trailing ellipsis ("so..." -> "so ."), which
+    # would count as an insertion. Tokens without any letter or digit are dropped (design.md, amendment 3).
+    return " ".join(t for t in whisper_normalizer()(text).split() if any(c.isalnum() for c in t))
 
 
 FILLERS = frozenset({"ah", "eh", "er", "erm", "hm", "hmm", "huh", "mhm", "mm", "mmm", "uh", "uhm", "um"})
