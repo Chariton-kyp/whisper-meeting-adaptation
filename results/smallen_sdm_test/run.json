@@ -1,0 +1,37 @@
+{
+  "config": {
+    "model": "openai/whisper-small.en",
+    "adapter": null,
+    "dtype": "float16",
+    "dataset": "ami",
+    "ami_config": "sdm",
+    "split": "test",
+    "batch_size": 16,
+    "num_beams": 1,
+    "max_new_tokens": 128
+  },
+  "config_path": "configs/eval/smallen_sdm.yaml",
+  "limit_meetings": null,
+  "ami_revision": "46f28f2503e2ec48f8867a84eef356c70476beab",
+  "provenance": {
+    "timestamp_utc": "2026-10-24T09:48:19+00:00",
+    "git_commit": "20df35946bf40b336ab26a651aefb8f1b7eacd18",
+    "git_dirty": false,
+    "python": "3.12.9",
+    "torch": "2.14.1+cu130",
+    "cuda": "13.0",
+    "transformers": "5.20.2",
+    "peft": "0.21.2",
+    "datasets": "5.1.0",
+    "gpu": {
+      "name": "NVIDIA GeForce RTX 4080 Laptop GPU",
+      "vram_total_gb": 12.88,
+      "vram_free_at_start_gb": 11.6
+    },
+    "nvidia_smi": "595.79, 619 MiB, 12282 MiB, 54, 210 MHz"
+  },
+  "wall_seconds_total": 364.9,
+  "rescored": [
+    "61934ee9052368b884f7541d92948a0ea293e838"
+  ]
+}

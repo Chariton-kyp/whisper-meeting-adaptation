@@ -1,0 +1,113 @@
+{
+  "args": {
+    "model": "openai/whisper-small.en",
+    "config": "sdm",
+    "n": 8,
+    "min_dur": 2.0,
+    "train_batch": 16,
+    "train_steps": 5,
+    "out": "outputs/smoke/b16"
+  },
+  "env": {
+    "python": "3.12.9",
+    "torch": "2.14.1+cu130",
+    "cuda": "13.0",
+    "transformers": "5.20.2",
+    "peft": "0.21.2",
+    "datasets": "5.1.0",
+    "gpu": "NVIDIA GeForce RTX 4080 Laptop GPU",
+    "vram_free_gb": 11.6,
+    "vram_total_gb": 12.88,
+    "bf16": true
+  },
+  "data": {
+    "shard": "edinburghcstr/ami@46f28f2/sdm/test-00000-of-00004.parquet",
+    "num_rows": 3161,
+    "schema": "meeting_id: string\naudio_id: string\ntext: string\naudio: struct<bytes: binary, path: string>\n  child 0, bytes: binary\n  child 1, path: string\nbegin_time: float\nend_time: float\nmicrophone_id: string\nspeaker_id: string\n-- schema metadata --\nhuggingface: '{\"info\": {\"features\": {\"meeting_id\": {\"dtype\": \"string\", \"_' + 384",
+    "sample_rates": [
+      16000
+    ],
+    "durations_s": [
+      2.38,
+      3.45,
+      2.93,
+      2.83,
+      2.95,
+      4.0,
+      6.48,
+      3.46
+    ],
+    "ids": [
+      "AMI_EN2002a_sdm_FEO072_0035475_0035713",
+      "AMI_EN2002a_sdm_MEE073_0182107_0182452",
+      "AMI_EN2002a_sdm_FEO070_0201252_0201545",
+      "AMI_EN2002a_sdm_MEE073_0193279_0193562",
+      "AMI_EN2002a_sdm_MEE073_0208436_0208731",
+      "AMI_EN2002a_sdm_MEE073_0157652_0158052",
+      "AMI_EN2002a_sdm_FEO072_0027270_0027918",
+      "AMI_EN2002a_sdm_FEO070_0169920_0170266"
+    ]
+  },
+  "inference": {
+    "audio_seconds": 28.48,
+    "wall_seconds": 0.661,
+    "rtf_batched": 0.0232,
+    "wer_normalized": 0.2935,
+    "examples": [
+      {
+        "ref": "YEAH I MEAN THAT'S THAT'S STILL ANOTHER LEVEL FURTHER",
+        "hyp": " Yeah, I mean that's still another level further."
+      },
+      {
+        "ref": "LIKE JUST GET A A QUICK LOOK OVER AND JUST THE BASICS",
+        "hyp": " We just got a quick look over and just can take a sort of tutorial."
+      },
+      {
+        "ref": "SO UH THERE'S NOT POINT IN HAVING",
+        "hyp": " I don't think there was"
+      },
+      {
+        "ref": "ACTUALLY I WAS ASKING STEVE ABOUT THAT WHETHER WE CAN GET IN THERE",
+        "hyp": " I think she was asking Steve about that, whether we can get in there."
+      },
+      {
+        "ref": "DO YOU REALLY WANT MULTIPLE WINDOWS FROM A SINGLE LAP",
+        "hyp": " and really wonderful for windows from a single app."
+      },
+      {
+        "ref": "DID WE WANNA MEET BEFORE WE TALK TO STEVE NEXT WEEK",
+        "hyp": " Did we want to meet before we talk to Steve next week?"
+      },
+      {
+        "ref": "YEAH SO Y WHEN YOU RIGHT CLICK ON IT ONE ONE OPTION WILL BE GIVE ME ALL YOUR MEETINGS CHARACTERISE THE SPEAKER",
+        "hyp": " Yeah, so when you right click on it, one option will be, give me all your meetings, characterise the speaker."
+      },
+      {
+        "ref": "JUST LOOKING AT MY OWN DEADLINES",
+        "hyp": " Just looking at my own deadlines."
+      }
+    ]
+  },
+  "lora": {
+    "attn_implementation": "sdpa",
+    "spilled_to_sysmem": false,
+    "batch": 16,
+    "steps": 5,
+    "sec_per_step": 1.48,
+    "first_step_sec": 1.835,
+    "grad_check": {
+      "encoder": "72/144 lora tensors with nonzero grad",
+      "decoder": "120/240 lora tensors with nonzero grad"
+    },
+    "peak_vram_gb": 4.09,
+    "trainable_params": 12976128,
+    "total_params": 254710272,
+    "losses": [
+      1.9417,
+      1.6914,
+      1.4057,
+      1.2057,
+      1.0529
+    ]
+  }
+}
