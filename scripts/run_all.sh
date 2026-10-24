@@ -15,13 +15,14 @@ run() {
   local rc=$?
   echo "[$(date '+%F %T')] END rc=$rc $*" >> "$LOG"
 }
-EVAL="uv run python -u scripts/evaluate.py"
+PY=.venv/Scripts/python.exe
+EVAL="$PY -u scripts/evaluate.py"
 
 run $EVAL --config configs/eval/smallen_ihm.yaml --run-id smallen_ihm_test
 run $EVAL --config configs/eval/smallen_sdm.yaml --run-id smallen_sdm_test
 
 for arm in both encoder decoder; do
-  run uv run python -u scripts/train_lora.py --config configs/train/turbo_lora_$arm.yaml
+  run $PY -u scripts/train_lora.py --config configs/train/turbo_lora_$arm.yaml
 done
 
 for sys in zeroshot both encoder decoder; do
