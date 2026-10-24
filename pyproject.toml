@@ -15,6 +15,7 @@ dependencies = [
     "huggingface-hub>=0.35",
     "pyyaml>=6.0",
     "pandas>=2.2",
+    "scipy>=1.14",
 ]
 
 [dependency-groups]
