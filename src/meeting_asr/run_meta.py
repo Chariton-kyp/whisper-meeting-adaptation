@@ -40,7 +40,8 @@ def collect() -> dict:
     return {
         "timestamp_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "git_commit": _git("rev-parse", "HEAD"),
-        "git_dirty": bool(_git("status", "--porcelain")),
+        # Only changes to tracked files count; untracked results/ must not mark the code as modified.
+        "git_dirty": bool(_git("status", "--porcelain", "--untracked-files=no")),
         "python": platform.python_version(),
         "torch": torch.__version__,
         "cuda": torch.version.cuda,
