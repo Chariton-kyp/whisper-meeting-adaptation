@@ -29,16 +29,20 @@ for arm in both encoder decoder; do
   train_done $arm && skip "train $arm" || run $PY -u scripts/train_lora.py --config configs/train/turbo_lora_$arm.yaml
 done
 
-for sys in zeroshot both encoder decoder; do
-  if [ "$sys" = zeroshot ]; then ad=null; else ad=outputs/runs/turbo_lora_$sys/best; fi
-  eval_done ${sys}_sdm_test && skip ${sys}_sdm_test || \
-    run $EVAL --config configs/eval/turbo_sdm_dev.yaml --set split=test --set adapter=$ad --run-id ${sys}_sdm_test
-  eval_done ${sys}_ihm_test && skip ${sys}_ihm_test || \
-    run $EVAL --config configs/eval/turbo_ihm_dev.yaml --set split=test --set adapter=$ad --run-id ${sys}_ihm_test
-  eval_done ${sys}_esb_ami && skip ${sys}_esb_ami || \
-    run $EVAL --config configs/eval/turbo_esb_ami.yaml --set adapter=$ad --run-id ${sys}_esb_ami
-  eval_done ${sys}_earnings22 && skip ${sys}_earnings22 || \
-    run $EVAL --config configs/eval/turbo_earnings22.yaml --set adapter=$ad --run-id ${sys}_earnings22
+adapter_for() { if [ "$1" = zeroshot ]; then echo null; else echo outputs/runs/turbo_lora_$1/best; fi; }
+# Evaluation set by evaluation set, so the primary comparison (SDM test) is complete first.
+# Each evaluation is independent, so the order does not affect any result.
+for set in sdm_test ihm_test esb_ami earnings22; do
+  case $set in
+    sdm_test)   cfg="configs/eval/turbo_sdm_dev.yaml --set split=test" ;;
+    ihm_test)   cfg="configs/eval/turbo_ihm_dev.yaml --set split=test" ;;
+    esb_ami)    cfg="configs/eval/turbo_esb_ami.yaml" ;;
+    earnings22) cfg="configs/eval/turbo_earnings22.yaml" ;;
+  esac
+  for sys in zeroshot both encoder decoder; do
+    eval_done ${sys}_${set} && skip ${sys}_${set} || \
+      run $EVAL --config $cfg --set adapter=$(adapter_for $sys) --run-id ${sys}_${set}
+  done
 done
 echo "[$(date '+%F %T')] CORE DONE" >> "$LOG"
 
