@@ -1,0 +1,299 @@
+{
+  "run": "encoder_sdm_test",
+  "n_ref_words": 89562,
+  "top_substitutions": [
+    [
+      "kay -> okay",
+      46
+    ],
+    [
+      "yep -> yeah",
+      45
+    ],
+    [
+      "the -> a",
+      44
+    ],
+    [
+      "okay -> yeah",
+      44
+    ],
+    [
+      "cause -> because",
+      44
+    ],
+    [
+      "a -> the",
+      43
+    ],
+    [
+      "we -> you",
+      42
+    ],
+    [
+      "that -> it",
+      39
+    ],
+    [
+      "it -> that",
+      37
+    ],
+    [
+      "yes -> yeah",
+      34
+    ],
+    [
+      "yeah -> no",
+      30
+    ],
+    [
+      "i -> yeah",
+      30
+    ]
+  ],
+  "top_deletions": [
+    [
+      "yeah",
+      414
+    ],
+    [
+      "it",
+      248
+    ],
+    [
+      "is",
+      198
+    ],
+    [
+      "a",
+      195
+    ],
+    [
+      "i",
+      185
+    ],
+    [
+      "the",
+      153
+    ],
+    [
+      "not",
+      147
+    ],
+    [
+      "that",
+      133
+    ],
+    [
+      "and",
+      109
+    ],
+    [
+      "know",
+      104
+    ],
+    [
+      "you",
+      100
+    ],
+    [
+      "to",
+      89
+    ]
+  ],
+  "top_insertions": [
+    [
+      "i",
+      278
+    ],
+    [
+      "it",
+      277
+    ],
+    [
+      "is",
+      237
+    ],
+    [
+      "yeah",
+      216
+    ],
+    [
+      "a",
+      173
+    ],
+    [
+      "that",
+      141
+    ],
+    [
+      "you",
+      135
+    ],
+    [
+      "the",
+      130
+    ],
+    [
+      "whole",
+      122
+    ],
+    [
+      "not",
+      96
+    ],
+    [
+      "we",
+      95
+    ],
+    [
+      "do",
+      91
+    ]
+  ],
+  "filler_deletions": 23,
+  "repeated_word_deletions": 141,
+  "deletions_total": 5769,
+  "empty_ref_utterances": 990,
+  "empty_ref_with_output": 195,
+  "top_outputs_on_empty_refs": [
+    [
+      "yeah",
+      74
+    ],
+    [
+      "okay",
+      16
+    ],
+    [
+      "oh",
+      9
+    ],
+    [
+      "no",
+      8
+    ],
+    [
+      "uh-huh",
+      6
+    ],
+    [
+      "right",
+      4
+    ],
+    [
+      "so",
+      3
+    ],
+    [
+      "oh yeah",
+      3
+    ],
+    [
+      "and",
+      3
+    ],
+    [
+      "yes",
+      2
+    ],
+    [
+      "i think",
+      1
+    ],
+    [
+      "absolutely",
+      1
+    ]
+  ],
+  "most_improved": [
+    {
+      "audio_id": "AMI_ES2004b_sdm_FEE013_0118235_0118272",
+      "ref": "",
+      "base": "the end of the end of the end of the end of the end of the end of the end of the end of the end of the end of the end of the end of the end of the end of the end of the end of the end of the end of the end of the end of the end of the end of the end of the end of the end of the end of the end of the end of the end of the end of the end of the end of",
+      "new": "",
+      "delta_errors": -96
+    },
+    {
+      "audio_id": "AMI_TS3003a_sdm_MTD009PM_0070024_0070319",
+      "ref": "it is my characteristic characteristic about the dolphin",
+      "base": "i am not correct i am not correct i am not correct i am not correct i am correct i am correct i am correct i am correct i am correct i am correct i am correct i am correct i am correct i am correct i am correct i am correct i am correct i am correct i am correct i am correct i am correct i am correct i am correct i am correct i am correct i am correct i am correct i am correct i am correct i am correct i am correct",
+      "new": "to make characteristic a kind of characteristic about the dog",
+      "delta_errors": -90
+    },
+    {
+      "audio_id": "AMI_EN2002d_sdm_MEE071_0097588_0097750",
+      "ref": "no that is problem",
+      "base": "no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no",
+      "new": "no that is probably a question",
+      "delta_errors": -60
+    },
+    {
+      "audio_id": "AMI_ES2004b_sdm_MEE014_0190909_0191734",
+      "ref": "yeah and if yeah if you if you had if you had one of those just coming back to your other point about pressing the button and setting off the bleeper in the room that could",
+      "base": "yeah yeah yeah yeah just kind of action",
+      "new": "yeah and if yeah if you if you had if you had one of those just coming back to your other point about pressing the button and setting off the blooper in the room that could",
+      "delta_errors": -32
+    },
+    {
+      "audio_id": "AMI_EN2002b_sdm_FEO070_0023120_0024443",
+      "ref": "she never said that",
+      "base": "perfectionist that is a good idea let us just cut out the middle man yeah exactly you are not even going to tell us to go to a rule anyway",
+      "new": "yeah perfectionist right",
+      "delta_errors": -26
+    },
+    {
+      "audio_id": "AMI_EN2002c_sdm_MEE071_0018397_0019186",
+      "ref": "if someo if you want to do that then then tell me how you want the data presented how the cause do you want me to tell you",
+      "base": "because tell me",
+      "new": "if some if you want to do that then then tell me how you want the data presented how the cause do you want me to tell you",
+      "delta_errors": -25
+    }
+  ],
+  "most_degraded": [
+    {
+      "audio_id": "AMI_TS3003a_sdm_MTD009PM_0110175_0110677",
+      "ref": "s haunted white board",
+      "base": "0 good boy",
+      "new": "so probably a whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole whole",
+      "delta_errors": 124
+    },
+    {
+      "audio_id": "AMI_ES2004c_sdm_MEE014_0069582_0070774",
+      "ref": "ye yeah i think i th g y you could have a dual power thing but the the thing with the solar cells is you would need to put them on the case and they because",
+      "base": "where the 2 things are not compatible yeah i think you could have a dual power thing but the thing with the solar cells is you would need to put them on the case and they because",
+      "new": "were the 2 things not compatible like a dual power",
+      "delta_errors": 22
+    },
+    {
+      "audio_id": "AMI_ES2004b_sdm_MEO015_0112627_0113386",
+      "ref": "anything about that on the market research or something like regarding whether people want a combined something like that",
+      "base": "anything about that on the market research or something like regarding whether people want a combined something like that",
+      "new": "programming",
+      "delta_errors": 19
+    },
+    {
+      "audio_id": "AMI_ES2004a_sdm_FEE013_0065357_0066222",
+      "ref": "so yes yes i do not think we have to i do not think it is a case of worrying about different languages and things like that",
+      "base": "yes yes i do not think it is a case of worrying about different languages and things like that",
+      "new": "target group",
+      "delta_errors": 19
+    },
+    {
+      "audio_id": "AMI_EN2002a_sdm_MEE071_0109230_0110041",
+      "ref": "so it will come up on the screen for the moment i have not managed to put it into a vector or whatever in java to play with it",
+      "base": "so it will come up on the screen but at the moment i have not managed to put it into a vector or whatever in genre to play with it",
+      "new": "so it will come up on the screen",
+      "delta_errors": 18
+    },
+    {
+      "audio_id": "AMI_EN2002d_sdm_MEE073_0017761_0018272",
+      "ref": "i do not know it is just it is i do not know it is it is like if you are going to use this stuff later on in your life",
+      "base": "i know it is like if you are going to use this stuff later on in your life",
+      "new": "yeah",
+      "delta_errors": 18
+    }
+  ],
+  "utterances_improved": 5758,
+  "utterances_degraded": 1241
+}

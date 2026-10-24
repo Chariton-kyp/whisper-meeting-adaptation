@@ -1,0 +1,43 @@
+{
+  "note": "POST HOC, exploratory; loop = >= 5 identical tokens or bigrams in a row",
+  "systems": {
+    "zeroshot": {
+      "looping_utterances": 1,
+      "insertions_in_loops": 60,
+      "share_of_errors": 0.0018483149528679688,
+      "examples": [
+        "no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no no "
+      ]
+    },
+    "both": {
+      "looping_utterances": 6,
+      "insertions_in_loops": 123,
+      "share_of_errors": 0.006137724550898204,
+      "examples": [
+        "no just just pains just result pains which would no no no no no",
+        "even one of those yeah yeah yeah yeah yeah yeah yeah yeah yeah",
+        "i suppose even calculating the the the the the what is its faces themselves would be too much too long"
+      ]
+    },
+    "encoder": {
+      "looping_utterances": 9,
+      "insertions_in_loops": 130,
+      "share_of_errors": 0.006483790523690773,
+      "examples": [
+        "no just just pains just result pains richard no no no no no",
+        "i suppose even calculating the the the the the what is its faces themselves would be too much too long",
+        "yeah yeah yeah yeah yeah"
+      ]
+    },
+    "decoder": {
+      "looping_utterances": 30,
+      "insertions_in_loops": 1250,
+      "share_of_errors": 0.050586806960744635,
+      "examples": [
+        "yeah that might be like yeah yeah yeah yeah yeah yeah",
+        "no no no no no",
+        "it does an n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n n"
+      ]
+    }
+  }
+}

@@ -1,0 +1,209 @@
+{
+  "run": "zeroshot_sdm_test",
+  "n_ref_words": 89562,
+  "top_substitutions": [
+    [
+      "yeah -> you",
+      229
+    ],
+    [
+      "cause -> because",
+      103
+    ],
+    [
+      "okay -> you",
+      81
+    ],
+    [
+      "t -> tv",
+      78
+    ],
+    [
+      "we -> you",
+      61
+    ],
+    [
+      "yeah -> yes",
+      54
+    ],
+    [
+      "a -> the",
+      52
+    ],
+    [
+      "that -> it",
+      51
+    ],
+    [
+      "yeah -> that",
+      42
+    ],
+    [
+      "yep -> yeah",
+      37
+    ],
+    [
+      "l -> lcd",
+      32
+    ],
+    [
+      "it -> you",
+      31
+    ]
+  ],
+  "top_deletions": [
+    [
+      "it",
+      506
+    ],
+    [
+      "the",
+      458
+    ],
+    [
+      "is",
+      440
+    ],
+    [
+      "i",
+      427
+    ],
+    [
+      "yeah",
+      426
+    ],
+    [
+      "you",
+      349
+    ],
+    [
+      "that",
+      316
+    ],
+    [
+      "a",
+      293
+    ],
+    [
+      "not",
+      217
+    ],
+    [
+      "and",
+      214
+    ],
+    [
+      "we",
+      203
+    ],
+    [
+      "to",
+      195
+    ]
+  ],
+  "top_insertions": [
+    [
+      "thank",
+      596
+    ],
+    [
+      "i",
+      490
+    ],
+    [
+      "you",
+      417
+    ],
+    [
+      "it",
+      342
+    ],
+    [
+      "is",
+      334
+    ],
+    [
+      "yeah",
+      289
+    ],
+    [
+      "that",
+      271
+    ],
+    [
+      "the",
+      263
+    ],
+    [
+      "not",
+      190
+    ],
+    [
+      "to",
+      187
+    ],
+    [
+      "a",
+      183
+    ],
+    [
+      "do",
+      181
+    ]
+  ],
+  "filler_deletions": 14,
+  "repeated_word_deletions": 615,
+  "deletions_total": 11451,
+  "empty_ref_utterances": 990,
+  "empty_ref_with_output": 615,
+  "top_outputs_on_empty_refs": [
+    [
+      "thank you.",
+      151
+    ],
+    [
+      "yeah.",
+      46
+    ],
+    [
+      "you",
+      42
+    ],
+    [
+      "yes.",
+      15
+    ],
+    [
+      "okay.",
+      13
+    ],
+    [
+      "and",
+      11
+    ],
+    [
+      "amen.",
+      8
+    ],
+    [
+      "no.",
+      5
+    ],
+    [
+      "so,",
+      5
+    ],
+    [
+      "to",
+      4
+    ],
+    [
+      "because",
+      4
+    ],
+    [
+      "right.",
+      4
+    ]
+  ]
+}
