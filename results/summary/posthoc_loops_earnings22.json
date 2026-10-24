@@ -1,0 +1,41 @@
+{
+  "note": "POST HOC, exploratory; loop = >= 5 identical tokens or bigrams in a row",
+  "systems": {
+    "zeroshot": {
+      "looping_utterances": 0,
+      "insertions_in_loops": 0,
+      "share_of_errors": 0.0,
+      "examples": []
+    },
+    "both": {
+      "looping_utterances": 4,
+      "insertions_in_loops": 14,
+      "share_of_errors": 0.002621231979030144,
+      "examples": [
+        "regarding our expansions the closing to c c c c c t at encenada barragan is more than 60% a pass",
+        "so our gas supplies are different than than than than than the country average so to speak",
+        "he here this was a big one and the thanks to the good work of our c f 0 we have more or less paid off the the the the th"
+      ]
+    },
+    "encoder": {
+      "looping_utterances": 3,
+      "insertions_in_loops": 8,
+      "share_of_errors": 0.0014776505356483192,
+      "examples": [
+        "so our gas supplies are different than than than than than the country average so to speak",
+        "he here this was a big one and the thanks to the good work of our c f 0 we have more or less paid off the the the the th",
+        "i am sure this will probably have a a a a a a positive effect if things are done properly"
+      ]
+    },
+    "decoder": {
+      "looping_utterances": 14,
+      "insertions_in_loops": 484,
+      "share_of_errors": 0.0815913688469319,
+      "examples": [
+        "7 p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p p ",
+        "we have another question from e c f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f f ",
+        "no we we we we we are not envisioning i i think what we have just received"
+      ]
+    }
+  }
+}

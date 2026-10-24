@@ -1,0 +1,44 @@
+{
+  "n_utterances": 2000,
+  "n_meetings": 16,
+  "n_ref_words": 33857,
+  "n_empty_ref_after_norm": 5,
+  "wer": {
+    "value": 0.1599078477124376,
+    "ci_lo": 0.13622155355398177,
+    "ci_hi": 0.18491099727038798
+  },
+  "cer": {
+    "value": 0.0916963429217204,
+    "ci_lo": 0.07502824765320369,
+    "ci_hi": 0.11073045455279318
+  },
+  "wer_disfluency_insensitive": {
+    "value": 0.15408833318341278,
+    "ci_lo": 0.13208472216141542,
+    "ci_hi": 0.17732631746412592
+  },
+  "wer_orthographic": {
+    "value": 0.42782417709447157,
+    "ci_lo": 0.4072810642051966,
+    "ci_hi": 0.4516965917839608
+  },
+  "sub_rate": 0.07378090202912249,
+  "del_rate": 0.030540213249844936,
+  "ins_rate": 0.05558673243347018,
+  "insertions_on_empty_refs": 6,
+  "formatting": {
+    "frac_with_punct": 0.176,
+    "frac_with_lowercase": 1.0,
+    "frac_starting_upper": 0.004
+  },
+  "timing": {
+    "scope": "model.generate only (feature extraction, decoding to text and I/O excluded)",
+    "batch_size": 16,
+    "timed_batches": 124,
+    "timed_audio_seconds": 14251.0,
+    "generate_seconds": 152.06,
+    "rtf": 0.01067,
+    "peak_vram_gb": 2.39
+  }
+}
