@@ -1,0 +1,9 @@
+# Out-of-domain set: 2,000 Earnings-22 segments (splits/earnings22_test_2000.txt).
+model: openai/whisper-large-v3-turbo
+adapter: null
+dtype: float16
+dataset: earnings22
+ids_file: splits/earnings22_test_2000.txt
+batch_size: 16
+num_beams: 1
+max_new_tokens: 128

@@ -1,0 +1,9 @@
+model: openai/whisper-large-v3-turbo
+adapter: null
+dtype: float16
+dataset: ami
+ami_config: sdm
+split: validation
+batch_size: 16
+num_beams: 1
+max_new_tokens: 128

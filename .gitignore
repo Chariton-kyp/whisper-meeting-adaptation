@@ -1,0 +1,49 @@
+# --- Data, audio, model weights: never in git ---
+data/
+checkpoints/
+outputs/
+wandb/
+mlruns/
+*.wav
+*.flac
+*.mp3
+*.m4a
+*.ogg
+*.opus
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.arrow
+*.parquet
+
+# --- Caches ---
+.cache/
+hf_cache/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# --- Environments and secrets ---
+.venv/
+.env
+.env.*
+!.env.example
+
+# --- Local agent / editor state ---
+.claude/
+.remember/
+CLAUDE.md
+.vscode/
+.idea/
+*.log
+
+# --- OS ---
+Thumbs.db
+.DS_Store
+desktop.ini

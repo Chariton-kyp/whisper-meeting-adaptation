@@ -1,0 +1,21 @@
+# Matched-budget arm: LoRA on encoder only. The other arms differ only in lora_target.
+model: openai/whisper-large-v3-turbo
+ami_config: sdm
+lora_target: encoder
+lora_r: 32
+lora_alpha: 64
+lora_dropout: 0.05
+lr: 1.0e-4
+warmup_steps: 100
+weight_decay: 0.0
+max_grad_norm: 1.0
+micro_batch: 8
+grad_accum: 2
+n_train: 16000          # set from the throughput pilot (docs/design.md, Amendments)
+train_order: splits/ami_sdm_train_order.txt
+dev_select: splits/ami_sdm_dev_select.txt
+eval_every: 250
+eval_batch: 32
+eval_at_start: true
+log_every: 25
+seed: 0

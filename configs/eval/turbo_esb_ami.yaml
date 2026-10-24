@@ -1,0 +1,8 @@
+# Formatting set: IHM audio of the AMI test meetings, cased and punctuated references.
+model: openai/whisper-large-v3-turbo
+adapter: null
+dtype: float16
+dataset: esb_ami
+batch_size: 16
+num_beams: 1
+max_new_tokens: 128

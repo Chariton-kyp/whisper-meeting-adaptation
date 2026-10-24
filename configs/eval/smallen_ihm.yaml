@@ -1,0 +1,10 @@
+# Harness validation: must reproduce published greedy WER (docs/design.md).
+model: openai/whisper-small.en
+adapter: null
+dtype: float16
+dataset: ami
+ami_config: ihm
+split: test
+batch_size: 16
+num_beams: 1
+max_new_tokens: 128
