@@ -164,3 +164,13 @@ becomes the baseline benchmark (V and Z) with error analysis.
    - Unchanged: the test set is still run exactly once per system.
    - Evaluation details: annotation tags in angle brackets (e.g. `<inaudible>` in Earnings-22) are
      removed from references before scoring, for every system.
+2. **2026-10-24, from the throughput pilot. N = 16,000.**
+   - The L-both pilot was stopped after 50 of the planned 200 steps. Throughput and memory were
+     already stable, and stopping saved time.
+   - Measured: 2.59 utt/s end to end, peak VRAM 7.47 GB with no spill. Loss went from 1.87 at
+     step 25 to 0.97 at step 50.
+   - N = 16,000 utterances (the first 16,000 lines of `splits/ami_sdm_train_order.txt`). That gives
+     1,000 optimizer steps per arm, about 1.7 h of training per arm plus the `dev-select` evaluations.
+   - The pilot did not exercise the `dev-select` evaluation path, which runs first, at step 0 of the
+     first arm.
+   - Log: `results/turbo_lora_both_pilot200/`.

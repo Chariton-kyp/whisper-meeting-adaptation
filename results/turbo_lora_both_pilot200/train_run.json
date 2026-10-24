@@ -1,0 +1,52 @@
+{
+  "run_id": "turbo_lora_both_pilot200",
+  "config": {
+    "model": "openai/whisper-large-v3-turbo",
+    "ami_config": "sdm",
+    "lora_target": "both",
+    "lora_r": 32,
+    "lora_alpha": 64,
+    "lora_dropout": 0.05,
+    "lr": 0.0001,
+    "warmup_steps": 100,
+    "weight_decay": 0.0,
+    "max_grad_norm": 1.0,
+    "micro_batch": 8,
+    "grad_accum": 2,
+    "n_train": 16000,
+    "train_order": "splits/ami_sdm_train_order.txt",
+    "dev_select": "splits/ami_sdm_dev_select.txt",
+    "eval_every": 250,
+    "eval_batch": 32,
+    "eval_at_start": true,
+    "log_every": 25,
+    "seed": 0
+  },
+  "config_path": "configs/train/turbo_lora_both.yaml",
+  "pilot_steps": 200,
+  "ami_revision": "46f28f2503e2ec48f8867a84eef356c70476beab",
+  "total_steps": 1000,
+  "run_steps": 200,
+  "effective_batch": 16,
+  "trainable_params": 27852800,
+  "total_params": 836730880,
+  "lora_target_regex": "model\\.(encoder|decoder)\\.layers\\.\\d+\\.(self_attn\\.(q_proj|k_proj|v_proj|out_proj)|encoder_attn\\.(q_proj|k_proj|v_proj|out_proj)|fc1|fc2)",
+  "data_load_seconds": 20.0,
+  "provenance": {
+    "timestamp_utc": "2026-10-24T09:35:52+00:00",
+    "git_commit": null,
+    "git_dirty": true,
+    "python": "3.12.9",
+    "torch": "2.14.1+cu130",
+    "cuda": "13.0",
+    "transformers": "5.20.2",
+    "peft": "0.21.2",
+    "datasets": "5.1.0",
+    "gpu": {
+      "name": "NVIDIA GeForce RTX 4080 Laptop GPU",
+      "vram_total_gb": 12.88,
+      "vram_free_at_start_gb": 8.1
+    },
+    "nvidia_smi": "595.79, 3942 MiB, 12282 MiB, 49, 2385 MHz"
+  }
+}
