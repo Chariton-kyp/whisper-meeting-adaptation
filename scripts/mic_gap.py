@@ -83,6 +83,37 @@ def main() -> None:
         out[s] = rec
         lines.append("| " + " | ".join(cells) + " |")
 
+    # POST HOC (not pre-registered): the ratio SDM/IHM. If every condition improves proportionally,
+    # the absolute gap shrinks while the ratio stays put, so a smaller absolute gap alone is not
+    # evidence of a far-field-specific gain.
+    def ratio_samples(s: str) -> tuple[float, np.ndarray]:
+        m = sums[s].loc[meetings]
+        e_i, e_s = m["err_ihm"].to_numpy(dtype=float), m["err_sdm"].to_numpy(dtype=float)
+        return e_s.sum() / e_i.sum(), e_s[idx].sum(1) / e_i[idx].sum(1)
+
+    lines += ["", "## Post hoc: relative far-field penalty (SDM/IHM WER ratio)", "",
+              "_Not pre-registered. Same segments, so the ratio equals the ratio of total errors._", "",
+              "| System | SDM/IHM ratio [95% CI] | Ratio change vs ref [95% CI] | Relative WER change SDM / IHM |",
+              "|---|---|---|---|"]
+    ref_r, ref_rb = ratio_samples(args.ref)
+    for s in names:
+        r, rb = ratio_samples(s)
+        lo, hi = np.quantile(rb, [0.025, 0.975])
+        cells = [f"`{s}`", f"{r:.2f} [{lo:.2f}, {hi:.2f}]"]
+        out[s]["ratio"] = r
+        out[s]["ratio_ci"] = [float(lo), float(hi)]
+        if s != args.ref:
+            d = rb - ref_rb
+            dlo, dhi = np.quantile(d, [0.025, 0.975])
+            out[s]["ratio_change"] = r - ref_r
+            out[s]["ratio_change_ci"] = [float(dlo), float(dhi)]
+            rel_s = out[s]["wer_sdm"] / out[args.ref]["wer_sdm"] - 1
+            rel_i = out[s]["wer_ihm"] / out[args.ref]["wer_ihm"] - 1
+            cells += [f"{r - ref_r:+.2f} [{dlo:+.2f}, {dhi:+.2f}]", f"{100 * rel_s:+.1f}% / {100 * rel_i:+.1f}%"]
+        else:
+            cells += ["—", "—"]
+        lines.append("| " + " | ".join(cells) + " |")
+
     dest = Path("results/summary")
     dest.mkdir(parents=True, exist_ok=True)
     (dest / "mic_gap.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
