@@ -21,7 +21,7 @@
     "bf16": true
   },
   "data": {
-    "shard": "test-00000-of-00004.parquet",
+    "shard": "edinburghcstr/ami@46f28f2/sdm/test-00000-of-00004.parquet",
     "num_rows": 3161,
     "schema": "meeting_id: string\naudio_id: string\ntext: string\naudio: struct<bytes: binary, path: string>\n  child 0, bytes: binary\n  child 1, path: string\nbegin_time: float\nend_time: float\nmicrophone_id: string\nspeaker_id: string\n-- schema metadata --\nhuggingface: '{\"info\": {\"features\": {\"meeting_id\": {\"dtype\": \"string\", \"_' + 384",
     "sample_rates": [
