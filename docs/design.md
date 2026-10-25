@@ -191,3 +191,20 @@ becomes the baseline benchmark (V and Z) with error analysis.
    - Not changed: spelling-convention mismatches between AMI and Whisper ("okay"/"ok",
      "cause"/"because", "t v"/"tv") are left alone, because they were not pre-registered. Their
      effect is analysed separately and labelled as post hoc.
+4. **2026-10-25, during and after evaluation.** These additions and fixes do not change any
+   pre-registered metric:
+   - **Evaluation order.** The queue was reordered so that one evaluation set finishes for all
+     systems before the next set starts. Each evaluation is independent, so no result changes.
+   - **Resampling dependency.** Earnings-22 audio is 24 kHz. The first Earnings-22 runs failed
+     because the `scipy` resampler was missing, and produced no results. After `scipy` was added they
+     were re-run. No other run was affected.
+   - **Post hoc analyses, all exploratory and labelled as such wherever they are reported:**
+     - a convention-insensitive WER (`scripts/conventions_posthoc.py`);
+     - a repetition-loop count (`scripts/loops_posthoc.py`);
+     - the SDM/IHM WER ratio and its change (`scripts/mic_gap.py`);
+     - per-utterance agreement between the encoder-only and encoder+decoder arms.
+
+     They were added after the test results were seen.
+   - **History rewrite before publication.** Session-link trailers and a local cache path were
+     removed. [`commit-map.md`](commit-map.md) maps the commits recorded in run provenance to the
+     published ones.
