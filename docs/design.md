@@ -2,9 +2,12 @@
 
 **What does the gain consist of, and what does it cost?**
 
-Status: **pre-registered on 2026-10-24, before any adaptation run.** Only the training-subset size N
-is left open; it is fixed after a throughput pilot (see Training). Any later change is recorded under
-[Amendments](#amendments) with its reason.
+Status: **written on 2026-10-24 before any training run, and committed before the three reported arms
+were trained.**
+- A short throughput pilot of the encoder+decoder arm (50 steps, no evaluation) started before the
+  first commit; see amendment 2.
+- Only the training-subset size N was left open, to be fixed by that pilot.
+- Every later change is recorded under [Amendments](#amendments) with its reason.
 
 ## Questions
 
@@ -156,7 +159,7 @@ becomes the baseline benchmark (V and Z) with error analysis.
 
 ## Amendments
 
-1. **2026-10-24, before any adaptation run. Full validation sets are now optional.**
+1. **2026-10-24, before the reported training runs. Full validation sets are now optional.**
    - What changed: full SDM/IHM validation is no longer required for adapted systems. It runs at the
      end of the queue, if time allows.
    - Reason: all three arms are reported, so nothing needs to be chosen among them, and each arm's
@@ -174,6 +177,11 @@ becomes the baseline benchmark (V and Z) with error analysis.
    - The pilot did not exercise the `dev-select` evaluation path, which runs first, at step 0 of the
      first arm.
    - Log: `results/turbo_lora_both_pilot200/`.
+   - Timeline:
+     - An earlier start of the same pilot (12:22) was killed after a duplicate trainer process
+       shared the GPU. It produced no usable log and no evaluation.
+     - The logged pilot started at 12:35. This document's first commit is 12:40.
+     - No pilot produced an evaluation or a checkpoint that was used later.
 3. **2026-10-24, harness bug fix. Found while inspecting zero-shot dev errors, before any adapted
    system was evaluated.**
    - The bug: Whisper's `EnglishTextNormalizer` leaves a bare "." from a trailing ellipsis

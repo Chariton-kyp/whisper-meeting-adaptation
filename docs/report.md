@@ -1,7 +1,8 @@
 # Report: LoRA adaptation of Whisper on far-field meeting audio
 
-The protocol is in [`design.md`](design.md). It was committed before any adapted model was trained or
-evaluated, and every later change is logged there as an amendment.
+The protocol is in [`design.md`](design.md). It was written before any training and committed before
+the reported training runs. A 50-step throughput pilot (no evaluation) started before the first commit
+(amendment 2). Every later change is logged there as an amendment.
 
 - All tables are generated from `results/` by `scripts/render_docs.py`, and numbers quoted in the text
   come from those tables.

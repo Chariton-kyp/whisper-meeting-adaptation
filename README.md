@@ -7,8 +7,9 @@ single-distant-microphone (SDM) audio, as three matched-budget arms: encoder+dec
 decoder only. Each arm is evaluated on held-out meetings, on both microphones, and on cased and
 punctuated references, and on an out-of-domain set.
 
-The protocol (hypotheses, metrics, splits, decoding) was committed to [`docs/design.md`](docs/design.md)
-before any adapted model was trained or evaluated, and every later change is logged there as an
+The protocol (hypotheses, metrics, splits, decoding) in [`docs/design.md`](docs/design.md) was written
+before any training and committed before the reported training runs. A 50-step throughput pilot with
+no evaluation started before the first commit (amendment 2). Every later change is logged there as an
 amendment. Every table below is generated from files in [`results/`](results/) by
 `scripts/render_docs.py`, and every number quoted in the text comes from those tables. The full
 write-up is in [`docs/report.md`](docs/report.md).
